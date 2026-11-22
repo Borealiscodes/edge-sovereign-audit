@@ -16,6 +16,43 @@
 
 ---
 
+## Repository Scaffolding
+
+```text
+edge-sovereign-audit/
+├── README.md                          # Master overview, under-construction banner, de Zayas epigraph & Zenodo DOIs
+├── TERMUX_EDGE_SOP.md                 # ARM64 Android Termux Clone -> Seal -> Push -> Purge SOP
+├── pyproject.toml                     # Featherweight pure-Python config (pydantic, pypdf, pytest)
+├── .gitignore                         # Blocks caches, .venv, local PDFs, and raw case artifacts
+│
+├── rfcs/                              # Canonical Markdown Specifications
+│   ├── INDEX.md                       # Master catalog linking RFC-006 through RFC-012 & Zenodo DOIs
+│   ├── RFC-008-edge-verification.md   # Deterministic SHA-256 manifests, CPU gates & enclosure math
+│   ├── RFC-009-llmfit-governance.md   # Hardware-bounded inference admission (llmfit bridge)
+│   ├── RFC-010-8b-context-packing.md  # Token-budgeted context packing & quiescence retry clamp
+│   ├── RFC-011-mission-drift-meta.md  # NGO mission drift, survivor exclusion & aesthetic sovereignty
+│   └── RFC-012-charity-evaluator.md   # Quis custodiet multi-jurisdictional evaluator (UK/IE/NY/DC)
+│
+├── src/
+│   └── sovereign_audit/
+│       ├── __init__.py
+│       ├── rfc008_toolkit.py          # Pre-LLM SHA-256 manifests, CPU quote gate & RFC-006 metrics
+│       ├── rfc009_llmfit_bridge.py    # Hardware admission gate & /proc/meminfo + statvfs fallback
+│       ├── rfc010_context_packer.py   # Token-budgeted chunk routing & 8b-is quiescence clamp
+│       └── rfc012_charity_evaluator.py# UK/IE/NY/DC statutory charity & TNR response evaluator
+│
+├── tests/
+│   ├── test_rfc008_gate.py            # Offline manifest tamper, quote rejection & enclosure tests
+│   ├── test_rfc009_bridge.py          # Storage reserve lock & EDGE_CPU_AUDIT_ONLY mode tests
+│   ├── test_rfc010_packer.py          # Token budget & dead-zone retry clamp tests
+│   └── test_rfc012_evaluator.py       # UK, IE, NY, DC statutory flag & asymmetry tests
+│
+└── examples/
+    └── pilot_charity_profile.json     # Anonymized JSON template for RFC-012 evaluation
+```
+
+---
+
 ## Architectural Overview
 `edge-sovereign-audit` is a system-agnostic, pure-Python forensic verification, hardware-governance, and institutional accountability toolkit designed to run offline on resource-constrained `ARM64` devices (such as `Android Termux` nodes with `< 80 MB` environment footprints) as well as standard workstations.
 
